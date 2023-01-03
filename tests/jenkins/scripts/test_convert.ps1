@@ -38,11 +38,13 @@ if ( $exec_performance -eq "y" ) {
 }else {
     $exec_performance=$null
 }
-
+Write-Host "$pwd"
+cd ..
+Write-Host "$pwd"
 git clone -b $mmdeploy_branch https://github.com/open-mmlab/mmdeploy.git
 cd mmdeploy
 $env:MMDEPLOY_DIR="$pwd"
-Write-Host "mmdeploy_dr = $env:MMDEPLOY_DIR"
+Write-Host "mmdeploy_dir = $env:MMDEPLOY_DIR"
 git submodule update --init --recursive
 # Copy-Item -Force -Recurse D:\huangzijie\workspace\tests
 
